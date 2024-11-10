@@ -9,7 +9,8 @@ public class SumOfDigits {
         int num = sc.nextInt();
         int sum = 0;
         while (num > 0) {
-            sum = sum + num % 10;
+            int rem = num % 10;
+            sum = sum + rem;
             num = num / 10;
         }
         System.out.println(sum);

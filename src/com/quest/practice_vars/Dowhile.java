@@ -34,7 +34,7 @@ public class Dowhile {
     static void prgm() {
         int i = 0;
         do {
-            System.out.println(i);
+            System.out.println(i);//prints the nos upto 10
             i++;
         } while (i <= 10);
     }

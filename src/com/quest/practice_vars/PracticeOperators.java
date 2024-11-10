@@ -44,8 +44,12 @@ public class PracticeOperators {
         int p=10;
         int q=5;
         //Ternary Operators
-       int result= p>15? ++q : 0;
+       int result= p<15? ++q : 0;
        System.out.println(result);
+
+       int s=11;
+       String res=(s%2==0)?"even":"odd";
+       System.out.println(res);
 
 
     }
