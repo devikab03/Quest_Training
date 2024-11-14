@@ -1,0 +1,48 @@
+1 NF
+----
+* A cell should contain a single value
+* Duplicate records shouldn't be present
+
+Eg:	create table Orders_nf(
+	order_id int primary key,
+	customer_name varchar(25),
+	product_name varchar(25)
+	);
+
+2 NF
+----
+* It should follow 1 NF
+* It should remove partial dependency
+* All non-key attributes should depend on primary key
+
+Eg:	create table Student(
+	student_id int primary key,
+	student_name varchar(25));
+
+	create table course(
+	course_id int primary key,
+	course_name varchar(25),
+	);
+	
+	create table Student_course(
+	student_id int ,
+	course_id int,
+	foreign key (student_id) references student(student_id),
+	foreign key (course_id) references course(course_id)
+	);	
+
+3 NF
+----
+* It should follow 2 NF
+* Transitive dependency shouldn't be present
+
+Eg:	CREATE TABLE Orders_new (
+	OrderID INT PRIMARY KEY,
+	ProductID INT,
+	FOREIGN KEY(ProductID) REFERENCES 	Products_new(ProductID)
+	);
+
+	create table products_new(
+	ProductID INT PRIMARY KEY,
+	Product_name varchar(25),
+	Supplier_name varchar(25));
