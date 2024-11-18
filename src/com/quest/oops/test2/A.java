@@ -21,7 +21,8 @@ public class A extends B {
     }
 
     public static void main(String[] args) {
-        A a = new A();
+        A a = new A();//at first constructor get executed
         a.add(1,2);
+        add(5); // static method call
     }
 }
