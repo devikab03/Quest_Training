@@ -14,7 +14,8 @@ public class Main {
             System.out.println("3.Display City details of a city");
             System.out.println("4.Display Temperature details of a city");
             System.out.println("6.Update Weather");
-            System.out.println("7.Exit");
+            System.out.println("7.Average Temperature details");
+            System.out.println("8.Exit");
             System.out.println("Enter the choice:");
             String choice = sc.nextLine();
             switch (choice) {
@@ -34,6 +35,9 @@ public class Main {
                     weatherDetails.updateDetails(sc);
                     break;
                 case "7":
+                    weatherDetails.averageTemperature();
+                    break;
+                case "8":
                     System.out.println("Exiting...");
                     return;
                 default:

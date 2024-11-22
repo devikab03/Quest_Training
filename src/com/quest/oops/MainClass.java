@@ -20,7 +20,7 @@ public class MainClass {
             prices[i] = sc.nextInt();
         }
 
-        System.out.println("Enter CommodityStock Analzer");
+        System.out.println("Enter CommodityStock Analyzer");
         System.out.println("Commodity Name:");
         String commodityName = sc.nextLine();
         System.out.println("Commodity Type:");
@@ -35,14 +35,15 @@ public class MainClass {
             prices2[i] = sc.nextInt();
         }
 
-        StockAnalyzer stockAnalyzer=new EquityStockAnalyzer(stockName,stockSymbol,prices);
-        StockAnalyzer stockAnalyzer1=new CommodityStockAnalyzer(commodityName,commodityType,commoditySymbol,prices2);
+        StockAnalyzer stockAnalyzer=new EquityStockAnalyzer(stockName,stockSymbol,prices,stockSector);
+        StockAnalyzer stockAnalyzer1=new CommodityStockAnalyzer(stockName,commodityType,stockSymbol,prices);
         stockAnalyzer.displayAnalysis();
         stockAnalyzer1.displayAnalysis();
         double avg=stockAnalyzer.calculateAveragePrice();
         double avg1=stockAnalyzer1.calculateAveragePrice();
         if(avg>avg1){
             System.out.println("Highest avg price:"+avg);
-        }
+        }else
+            System.out.println("Lowest avg price:"+avg1);
     }
 }

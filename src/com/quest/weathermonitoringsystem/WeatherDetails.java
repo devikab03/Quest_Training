@@ -124,6 +124,7 @@ public class WeatherDetails {
         return totalTemp/cityCount;
     }
 
+
     //alert
     public void alert(){
         for (int i = 0; i < cityCount; i++) {
@@ -135,6 +136,7 @@ public class WeatherDetails {
                 System.out.println("Low Humidity alert:"+city[i].getName());
             }
         }
+
 
 
     }

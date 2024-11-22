@@ -3,8 +3,9 @@ package com.quest.oops;
 public class EquityStockAnalyzer extends StockAnalyzer {
     String sector;
 
-    public EquityStockAnalyzer(String stockName, String stockSymbol, int[] prices) {
+    public EquityStockAnalyzer(String stockName, String stockSymbol, int[] prices,String sector) {
         super(stockName, stockSymbol, prices);
+        this.sector = sector;
     }
 
     @Override
@@ -40,17 +41,26 @@ public class EquityStockAnalyzer extends StockAnalyzer {
 
     @Override
     public int[] findLongestIncreasingTrend() {
-        int start = 0;
-        int end = 0;
-        int maxlen = 1;
-        int temp_start = 0;
-        int currentLength = 0;
+        int start = 0, end = 0, maxLength = 0, currentlength = 1, temp = 0;
 
-        for (int i = 0; i < prices.length; i++) {
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                currentlength++;
+                if (currentlength > maxLength) {
+                    maxLength = currentlength;
+                    start = temp;
+                    end = i;
+                }
+            } else {
+                temp = i;
+                currentlength = 1;
 
+            }
+        }
+
+        return new int[]{start+1,end+1, maxLength};
 
     }
-
 
     @Override
     public void displayAnalysis() {
@@ -61,7 +71,8 @@ public class EquityStockAnalyzer extends StockAnalyzer {
         System.out.println("Highest Price:" + findMaxPrice());
         System.out.println("Lowest Price:" + findMinPrice());
         System.out.println("Average Price:" + calculateAveragePrice());
-        System.out.println("Longest Increasing Trend:");
+        int [] increasingTrend = findLongestIncreasingTrend();
+        System.out.println("Longest Increasing Trend: Start Day " + prices[0] + ", End Day " + prices[1] + ", Length: " + prices[2] + " days");
 
 
     }
