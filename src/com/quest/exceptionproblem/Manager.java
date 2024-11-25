@@ -1,7 +1,7 @@
 package com.quest.exceptionproblem;
 
 public class Manager extends Employee {
-    private int teamSize;
+    private final int teamSize;
 
     public Manager(String name, int age, double salary, int teamSize) throws InvalidInputException {
         super(name, age, salary);

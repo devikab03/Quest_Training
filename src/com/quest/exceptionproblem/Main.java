@@ -17,7 +17,7 @@ public class Main {
                 int age = sc.nextInt();
                 System.out.println("Salary");
                 double salary = sc.nextDouble();
-                new Employee(name, age, salary);
+                employee=new Employee(name, age, salary);
             } catch (InvalidInputException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             } catch (InputMismatchException e) {
@@ -28,14 +28,16 @@ public class Main {
                 try {
                     System.out.println("Enter the Manager details:");
                     System.out.println("Name: ");
-                    String name1 = sc.nextLine();
+                    String name = sc.nextLine();
+                    sc.nextLine();
+
                     System.out.println("Age");
-                    int age1 = sc.nextInt();
+                    int age = sc.nextInt();
                     System.out.println("Salary");
-                    double salary1 = sc.nextDouble();
+                    double salary = sc.nextDouble();
                     System.out.println("TeamSize:");
                     int teamSize1 = sc.nextInt();
-                    new Manager(name1, age1, salary1, teamSize1);
+                    manager=new Manager(name, age, salary, teamSize1);
                 } catch (InvalidInputException | IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 } catch (InputMismatchException e) {
