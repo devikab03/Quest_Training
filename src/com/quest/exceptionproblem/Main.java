@@ -44,7 +44,7 @@ public class Main {
                     System.out.println("Enter valid data");
                 }
                 System.out.println("Employee details:");
-                employee.display();
+                employee.display();//sout(employee) so that to String get called
                 System.out.println("Manager details:");
                 manager.display();
             }
